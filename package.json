@@ -1,0 +1,39 @@
+{
+  "name": "INSERT_YOUR_NAME",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest --watch",
+    "prettier": "prettier --cache --write ./src",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx --ignore-path .gitignore src"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.8.4",
+    "eslint": "^8.27.0",
+    "@types/eslint": "^8.4.10",
+    "vite": "^3.2.3",
+    "eslint-config-prettier": "^8.5.0",
+    "@typescript-eslint/parser": "^5.42.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-tsconfig-paths": "^3.5.2",
+    "vitest": "^0.25.1"
+  }
+}
