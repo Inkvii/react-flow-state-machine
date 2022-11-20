@@ -1,16 +1,26 @@
 import { useCallback } from "react"
 import ReactFlow, {
   addEdge,
-  Background,
   Controls,
   Edge,
+  EdgeTypes,
   MiniMap,
   Node,
+  NodeTypes,
   Position,
   useEdgesState,
   useNodesState,
 } from "reactflow"
 import CustomEdge from "pages/home/fragment/CustomEdge"
+import CustomNode from "pages/home/fragment/CustomNode"
+
+const edgeTypes: EdgeTypes = {
+  custom: CustomEdge,
+}
+
+const nodeTypes: NodeTypes = {
+  custom: CustomNode,
+}
 
 const initialNodes: Node[] = [
   {
@@ -34,16 +44,19 @@ const initialNodes: Node[] = [
     sourcePosition: Position.Right,
     targetPosition: Position.Left,
   },
+  {
+    id: "4",
+    position: { x: 600, y: 200 },
+    data: { image: "server.svg", label: "Server #0" },
+    type: "custom",
+  },
 ]
 
 const initialEdges: Edge[] = [
   { id: "e1-2", source: "1", target: "2", animated: true, style: { stroke: "red" } },
   { id: "e2-3", source: "2", target: "3", type: "custom", animated: true },
+  { id: "e2-4", source: "2", target: "4", type: "custom", animated: false },
 ]
-
-const edgeTypes = {
-  custom: CustomEdge,
-}
 
 export default function StateMachine() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
@@ -59,10 +72,10 @@ export default function StateMachine() {
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
       edgeTypes={edgeTypes}
+      nodeTypes={nodeTypes}
     >
       <MiniMap />
       <Controls />
-      <Background />
     </ReactFlow>
   )
 }

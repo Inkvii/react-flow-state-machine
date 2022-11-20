@@ -8,9 +8,9 @@ interface Route {
 
 const home: Route = {
   path: "/",
-  component: <HomePage/>
+  component: <HomePage />,
 }
 
 export default {
-  home
+  home,
 }
