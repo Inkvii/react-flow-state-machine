@@ -1,5 +1,5 @@
 import { ReactElement } from "react"
-import HomePage from "pages/HomePage"
+import HomePage from "pages/home/HomePage"
 
 interface Route {
   path: string
